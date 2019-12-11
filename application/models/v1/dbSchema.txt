@@ -1,0 +1,36 @@
+-users
+	id_user|primary
+	username
+	email|email,unique
+	password
+	token
+
+-profile
+	id|primary
+	id_user
+	gender
+	company
+	phone
+
+-photo
+	id_photo|primary
+	id_user
+	photo|base64
+	description
+
+-like
+	id|primary
+	id_user
+	id_photo
+
+-comment
+	id_comment|primary
+	id_user
+	id_photo
+	comment|text
+
+-reply
+	id|primary
+	id_user
+	id_comment
+	comment|text
