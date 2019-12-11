@@ -17,7 +17,7 @@ class Auth extends CI_Model{
 		if(password_verify($input['password'], $data->result()[0]->password)){
 			$token = $this->generate_token();
 			$this->db->set('token', $token);
-			$this->db->where('id', $data->result()[0]->id);
+			$this->db->where('id_user', $data->result()[0]->id_user);
 			$setToken = $this->db->update('users');
 			if($setToken){
 				return $token;
